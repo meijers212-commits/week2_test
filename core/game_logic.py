@@ -29,14 +29,14 @@ def deal_two_each(deck: list[dict], player: dict, dealer: dict) -> None:
 
 def dealer_play(deck: list[dict], dealer: dict) -> bool:
     while True:
-        count = calculate_hand_value(dealer["hand"])
+        count = calculate_hand_value(dealer['hand'])
         if count < 17:
             card = deck.pop()
             dealer["hand"].append(card)
         else:
             break
 
-    count = calculate_hand_value(dealer["hand"])
+    count = calculate_hand_value(dealer['hand'])
     if count > 21:
         print(f"dealer busts with {count}! :)")
         return False
